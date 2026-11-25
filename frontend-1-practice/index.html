@@ -1,26 +1,126 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Выбор даты и времени</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!--
-      ЗАДАНИЕ
-      ========
-      Сверстать страницу выбора даты и времени по своему макету.
-
-      Пока это только вёрстка. Никакого JavaScript — ни кликов,
-      ни переходов, ни выбора дня. Всё статично.
-
-      Стили пишите в styles.css. Разметку — здесь.
-    -->
-
-    <div class="page">
-      <!-- Начните отсюда. Разметьте шапку, основную область
-           с календарём и слотами, подвал. -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Выбор даты и времени — Контур</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="booking-page">
+  <header class="masthead">
+    <div class="wrap masthead-row">
+      <button class="brand text-control" type="button">Контур</button>
+      <button class="home-control text-control" type="button">На главную</button>
     </div>
-  </body>
+  </header>
+
+  <nav class="booking-progress" aria-label="Шаги записи">
+    <ol class="wrap step-list">
+      <li class="step step-done"><span class="step-number">1</span>Мастер</li>
+      <li class="step step-done"><span class="step-number">2</span>Услуга</li>
+      <li class="step step-current" aria-current="step"><span class="step-number">3</span>Дата и время</li>
+      <li class="step"><span class="step-number">4</span>Контакты</li>
+      <li class="step"><span class="step-number">5</span>Подтверждение</li>
+    </ol>
+  </nav>
+
+  <main class="wrap booking-content">
+    <div class="title-row">
+      <button class="control back-control" type="button">← Назад</button>
+      <h1 class="page-title">Выберите дату и время</h1>
+    </div>
+
+    <div class="scheduler">
+      <section class="booking-card calendar-card" aria-labelledby="calendar-title">
+        <h2 class="card-title" id="calendar-title">Декабрь 2026</h2>
+        <ul class="calendar-grid">
+          <li class="weekday"><abbr class="weekday-label" title="Понедельник">Пн</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Вторник">Вт</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Среда">Ср</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Четверг">Чт</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Пятница">Пт</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Суббота">Сб</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Воскресенье">Вс</abbr></li>
+          <li class="day-cell month-start"><button class="control day-control" type="button" aria-label="1 декабря" disabled>1</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="2 декабря" disabled>2</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="3 декабря" disabled>3</button></li>
+          <li class="day-cell"><button class="control day-control day-selected" type="button" aria-label="4 декабря" aria-pressed="true">4</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="5 декабря" aria-pressed="false">5</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="6 декабря" disabled>6</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="7 декабря" disabled>7</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="8 декабря" disabled>8</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="9 декабря" disabled>9</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="10 декабря" disabled>10</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="11 декабря" disabled>11</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="12 декабря" disabled>12</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="13 декабря" disabled>13</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="14 декабря" disabled>14</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="15 декабря" disabled>15</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="16 декабря" disabled>16</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="17 декабря" disabled>17</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="18 декабря" disabled>18</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="19 декабря" disabled>19</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="20 декабря" disabled>20</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="21 декабря" disabled>21</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="22 декабря" disabled>22</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="23 декабря" disabled>23</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="24 декабря" disabled>24</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="25 декабря" disabled>25</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="26 декабря" disabled>26</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="27 декабря" disabled>27</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="28 декабря" disabled>28</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="29 декабря" disabled>29</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="30 декабря" disabled>30</button></li>
+          <li class="day-cell"><button class="control day-control" type="button" aria-label="31 декабря" disabled>31</button></li>
+        </ul>
+      </section>
+
+      <section class="booking-card times-card" aria-labelledby="times-title">
+        <h2 class="card-title" id="times-title">Пятница, 4 декабря</h2>
+        <p class="times-caption">Доступное время</p>
+        <ul class="slot-list">
+          <li class="slot">
+            <button class="control slot-control" type="button" disabled aria-label="12:00, занято">12:00</button>
+            <span class="slot-status" aria-hidden="true">Занято</span>
+          </li>
+          <li class="slot">
+            <button class="control slot-control" type="button" aria-pressed="false">14:30</button>
+          </li>
+          <li class="slot">
+            <button class="control slot-control" type="button" disabled aria-label="17:00, занято">17:00</button>
+            <span class="slot-status" aria-hidden="true">Занято</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="booking-actions">
+      <p class="selection-message">Выберите время</p>
+      <button class="control next-control" type="button" disabled>Далее</button>
+    </div>
+  </main>
+
+  <footer class="site-info">
+    <div class="wrap">
+      <div class="info-columns">
+        <div class="info-group">
+          <p class="footer-brand">Контур</p>
+          <p class="info-line">Барбершоп в Нижнем Новгороде</p>
+        </div>
+        <div class="info-group info-group-detail">
+          <h2 class="info-title">Контакты</h2>
+          <address class="info-address">
+            <span class="info-line">ул. Рождественская, 24</span>
+            <span class="info-line">Нижний Новгород</span>
+          </address>
+        </div>
+        <div class="info-group info-group-detail">
+          <h2 class="info-title">Режим работы</h2>
+          <p class="info-line">Ежедневно с 10:00 до 21:00</p>
+        </div>
+      </div>
+      <p class="copyright">© 2026 Контур</p>
+    </div>
+  </footer>
+</body>
 </html>
