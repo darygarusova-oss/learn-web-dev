@@ -1,14 +1,98 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Выбор даты и времени</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page">
-      <!-- Перенесите вашу верстку. Удалите статичные данные. Подключите скрипт -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Выбор даты и времени — Контур</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="booking-page">
+  <header class="masthead">
+    <div class="wrap masthead-row">
+      <button class="brand text-control" type="button">Контур</button>
+      <button class="home-control text-control" type="button">На главную</button>
     </div>
-  </body>
+  </header>
+
+  <nav class="booking-progress" aria-label="Шаги записи">
+    <ol class="wrap step-list">
+      <li class="step step-done"><span class="step-number">1</span>Мастер</li>
+      <li class="step step-done"><span class="step-number">2</span>Услуга</li>
+      <li class="step step-current" aria-current="step"><span class="step-number">3</span>Дата и время</li>
+      <li class="step"><span class="step-number">4</span>Контакты</li>
+      <li class="step"><span class="step-number">5</span>Подтверждение</li>
+    </ol>
+  </nav>
+
+  <main class="wrap booking-content">
+    <div class="title-row">
+      <button class="control back-control" type="button">← Назад</button>
+      <h1 class="page-title">Выберите дату и время</h1>
+    </div>
+
+    <div class="scheduler">
+      <section class="booking-card calendar-card" aria-labelledby="calendar-title">
+        <div class="calendar-heading">
+          <h2 class="card-title" id="calendar-title" aria-live="polite"></h2>
+          <div class="month-navigation" aria-label="Перелистывание месяцев">
+            <button class="control month-control" id="previous-month" type="button" aria-label="Предыдущий месяц">‹</button>
+            <button class="control month-control" id="next-month" type="button" aria-label="Следующий месяц">›</button>
+          </div>
+        </div>
+        <ul class="calendar-grid" id="calendar-days" aria-label="Дни месяца">
+          <li class="weekday"><abbr class="weekday-label" title="Понедельник">Пн</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Вторник">Вт</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Среда">Ср</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Четверг">Чт</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Пятница">Пт</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Суббота">Сб</abbr></li>
+          <li class="weekday"><abbr class="weekday-label" title="Воскресенье">Вс</abbr></li>
+        </ul>
+      </section>
+
+      <section class="booking-card times-card" aria-labelledby="times-title">
+        <h2 class="card-title" id="times-title"></h2>
+        <p class="times-caption" id="slot-caption" aria-live="polite"></p>
+        <ul class="slot-list" id="time-slots"></ul>
+      </section>
+    </div>
+
+    <div class="booking-actions">
+      <p class="selection-message" id="selection-message" aria-live="polite"></p>
+      <button class="control next-control" type="button" disabled>Далее</button>
+    </div>
+  </main>
+
+  <footer class="site-info">
+    <div class="wrap">
+      <div class="info-columns">
+        <div class="info-group">
+          <p class="footer-brand">Контур</p>
+          <p class="info-line">Барбершоп в Нижнем Новгороде</p>
+        </div>
+        <div class="info-group info-group-detail">
+          <h2 class="info-title">Контакты</h2>
+          <address class="info-address">
+            <span class="info-line">ул. Рождественская, 24</span>
+            <span class="info-line">Нижний Новгород</span>
+          </address>
+        </div>
+        <div class="info-group info-group-detail">
+          <h2 class="info-title">Режим работы</h2>
+          <p class="info-line">Ежедневно с 10:00 до 21:00</p>
+        </div>
+      </div>
+      <p class="copyright">© 2026 Контур</p>
+    </div>
+  </footer>
+  <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="dialog-title">
+    <h2 class="card-title" id="dialog-title">Вы выбрали время</h2>
+    <p class="dialog-date" id="dialog-date"></p>
+    <form class="dialog-actions" method="dialog">
+      <button class="control dialog-close" type="submit">Закрыть</button>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
 </html>
